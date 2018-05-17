@@ -23,15 +23,11 @@ const express = require('express');
 const path = require('path');
 const Kafka = require('no-kafka');
 const consumerTopic = process.env.KAFKA_TOPIC;
+
 var nforce = require('nforce');
-
 var Promise = require('bluebird');
-//require('./lib/hbsHelpers');
-
 var app = express();
-//var server = require('http').createServer(app);
-//var io = require('socket.io')(server);
-//var bodyParser = require('body-parser');
+
 
 /*
  * Data handler for consumer
@@ -40,15 +36,9 @@ var app = express();
 
 const dataHandler = function (messageSet, topic, partition) {
     messageSet.forEach(function (m) {
-        //messageCount++;
+       
         console.log('***sfdc publisher invoked***');
-        //const msg = JSONbig.parse(m.message.value.toString('utf8')).payload;
-        //console.log('topic message received - '+ m.message.value.toString('utf8'));
-        //var jsonContent = JSON.parse(m.message.value.toString('utf8'));
-        // Get Value from JSON
-        //console.log("Contact Id:", jsonContent.Contact_Id__c);
-        //console.log("Status:", jsonContent.Status__c);
-        //console.log("Reason:", jsonContent.Reason__c);
+        
         console.log("Message:", m.message.value.toString('utf8'));
 
         var jsonContent = JSON.parse(m.message.value.toString('utf8'));
@@ -63,14 +53,14 @@ const dataHandler = function (messageSet, topic, partition) {
         //Platform event code goes here
         var org = nforce.createConnection({
             environment: 'production',
-            clientId: process.env.CLIENT_ID,
-            clientSecret: process.env.CLIENT_SECRET,
+            clientId: process.env.SF_CLIENT_ID,
+            clientSecret: process.env.SF_CLIENT_SECRET,
             //apiVersion: 'v32.0',  // optional, defaults to current salesforce API version
             redirectUri: 'http://localhost:3000/oauth/_callback',
             mode: 'single' // optional, 'single' or 'multi' user mode, multi default
           });
 
-          org.authenticate({ username: process.env.USERNAME, password: process.env.PASSWORD}, function(err, resp){  
+          org.authenticate({ username: process.env.SF_USERNAME, password: process.env.SF_PASSWORD}, function(err, resp){  
             if(err) {
               console.log('####Error: ' + err.message);
             } else {
