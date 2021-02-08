@@ -18,6 +18,6 @@ When a message is pushed into the topic an associated Salesforce Platform Event 
 ## License
 See [LICENSE](LICENSE).
 
-This is not an official Salesforce product
+This is not an official Salesforce product.
 
 
