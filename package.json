@@ -16,7 +16,7 @@
     "no-kafka": "git://github.com/crcastle/kafka.git#3.0",
     "body-parser": "1.15.2",
     "bufferutil": "1.2.1",
-    "express": "4.13.4",
+    "express": "4.19.2",
     "handlebars": "^4.0.6",
     "nforce": "^1.2.3",
     "socket.io": "1.7.2",
