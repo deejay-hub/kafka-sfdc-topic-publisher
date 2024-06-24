@@ -19,7 +19,7 @@
     "express": "4.13.4",
     "handlebars": "^4.0.6",
     "nforce": "^1.2.3",
-    "socket.io": "1.7.2",
+    "socket.io": "2.5.0",
     "utf-8-validate": "1.2.1",
     "ws": ">=3.3.1",
     "hbs": "~2.9.0",
