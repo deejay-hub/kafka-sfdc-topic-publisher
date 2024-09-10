@@ -14,7 +14,7 @@
     "json-bigint": "^0.2.0",
     "lodash": "^4.15.0",
     "no-kafka": "git://github.com/crcastle/kafka.git#3.0",
-    "body-parser": "1.15.2",
+    "body-parser": "1.20.3",
     "bufferutil": "1.2.1",
     "express": "4.19.2",
     "handlebars": "^4.0.6",
